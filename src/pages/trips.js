@@ -2,10 +2,10 @@ import React from 'react'
 import Link from 'gatsby-link'
 import get from 'lodash/get'
 import Helmet from 'react-helmet'
-import styles from './blog.module.css'
+import styles from './trips.module.css'
 import ArticlePreview from '../components/article-preview'
 
-class BlogIndex extends React.Component {
+class TripsIndex extends React.Component {
   render() {
     const siteTitle = get(this, 'props.data.site.siteMetadata.title')
     const posts = get(this, 'props.data.allContentfulBlogPost.edges')
@@ -13,11 +13,9 @@ class BlogIndex extends React.Component {
     return (
       <div style={{ background: '#fff' }}>
         <Helmet title={siteTitle} />
-        <div className={styles.hero}>
-          Blog
-        </div>
+        <div className={styles.hero}>BCC trips</div>
         <div className="wrapper">
-          <h2 className="section-headline">Recent articles</h2>
+          <h2 className="section-headline">Recent trips</h2>
           <ul className="article-list">
             {posts.map(({ node }) => {
               return (
@@ -33,7 +31,7 @@ class BlogIndex extends React.Component {
   }
 }
 
-export default BlogIndex
+export default TripsIndex
 
 export const pageQuery = graphql`
   query BlogIndexQuery {

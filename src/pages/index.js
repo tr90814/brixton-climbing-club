@@ -15,7 +15,7 @@ class RootIndex extends React.Component {
         <Helmet title={siteTitle} />
         <Hero data={author.node} />
         <div className="wrapper">
-          <h2 className="section-headline">Recent articles</h2>
+          <h2 className="section-headline">Recent trips</h2>
           <ul className="article-list">
             {posts.map(({ node }) => {
               return (
@@ -44,7 +44,7 @@ export const pageQuery = graphql`
           tags
           heroImage {
             sizes(maxWidth: 350, maxHeight: 196, resizingBehavior: SCALE) {
-             ...GatsbyContentfulSizes_withWebp
+              ...GatsbyContentfulSizes_withWebp
             }
           }
           description {
