@@ -5,7 +5,7 @@ import Img from 'gatsby-image'
 
 import heroStyles from '../components/hero.module.css'
 
-class BlogPostTemplate extends React.Component {
+class TripPostTemplate extends React.Component {
   render() {
     const post = get(this.props, 'data.contentfulBlogPost')
     const siteTitle = get(this.props, 'data.site.siteMetadata.title')
@@ -14,20 +14,24 @@ class BlogPostTemplate extends React.Component {
       <div style={{ background: '#fff' }}>
         <Helmet title={`${post.title} | ${siteTitle}`} />
         <div className={heroStyles.hero}>
-          <Img className={heroStyles.heroImage} alt={post.title} sizes={post.heroImage.sizes} />
+          <Img
+            className={heroStyles.heroImage}
+            alt={post.title}
+            sizes={post.heroImage.sizes}
+          />
         </div>
         <div className="wrapper">
           <h1 className="section-headline">{post.title}</h1>
           <p
             style={{
-              display: 'block',
+              display: 'block'
             }}
           >
             {post.publishDate}
           </p>
           <div
             dangerouslySetInnerHTML={{
-              __html: post.body.childMarkdownRemark.html,
+              __html: post.body.childMarkdownRemark.html
             }}
           />
         </div>
@@ -36,7 +40,7 @@ class BlogPostTemplate extends React.Component {
   }
 }
 
-export default BlogPostTemplate
+export default TripPostTemplate
 
 export const pageQuery = graphql`
   query BlogPostBySlug($slug: String!) {
