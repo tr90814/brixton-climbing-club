@@ -13,7 +13,17 @@ class RootIndex extends React.Component {
     return (
       <div style={{ background: '#fff' }}>
         <Helmet title={siteTitle} />
-        <h1>Brixton Climbing Club</h1>
+        <h1
+          style={{
+            textAlign: 'center',
+            paddingTop: '60px',
+            paddingBottom: '60px',
+            color: 'white',
+            background: '#333'
+          }}
+        >
+          Brixton Climbing Club
+        </h1>
         <div className="wrapper">
           <h2 className="section-headline">Recent trips</h2>
           <ul className="article-list">
